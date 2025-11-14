@@ -8,22 +8,20 @@ public class SistemaFinanceiro {
         // Instância do sistema legado que precisa ser adaptado
         SistemaBancarioLegado sistemaLegado = new SistemaBancarioLegado();
         ProcessadorTransacoes meuProcessador = new TransacaoLegadoAdapter(sistemaLegado);
-        
-        // --- AJUSTE: Faltava um ')' no final da linha ---
+ 
         System.out.println("Executando Transação 1 (Sucesso)");
         
         // 2. O cliente faz a chamada usando a interface moderna e limpa (Envia "BRL")
         RespostaTransacao resp1 = meuProcessador.autorizar("1234-5678-9012-3456", 250.75, "BRL");
         System.out.println("[CLIENTE MODERNO] Resposta recebida: " + resp1);
-        
-        // --- AJUSTE: Faltava um ')' no final da linha ---
+
         System.out.println("\nExecutando Transação 2 (Falha)");
         
         // 3. O cliente faz outra chamada (Envia "USD")
         RespostaTransacao resp2 = meuProcessador.autorizar(null, -10.0, "USD");
         System.out.println("[CLIENTE MODERNO] Resposta recebida: " + resp2);
 
-        // --- ADAPTAÇÃO: Teste para a lógica de moeda da restrição ---
+        //Teste para a lógica de moeda da restrição 
         // Este novo teste verifica o caso de uma moeda não suportada ("JPY"),
         // que o Adapter deve traduzir para 0.
         System.out.println("\nExecutando Transação 3 (Moeda não suportada)");
