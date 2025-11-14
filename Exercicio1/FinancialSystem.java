@@ -1,6 +1,6 @@
 /* Demonstrar o Padrão Strategy em ação. */
 
-public class FinancialSystemDemo {
+public class FinancialSystem {
     
     public static void main(String[] args) {
         

@@ -1,5 +1,5 @@
 /* Implementa a interface EstadoUsina, a lógica de transição é encapsulada aqui. 
-Note que não há transição para ALERTA ou EMERGENCIA, prevenindo transições perigosas */
+Note que não há transição para ALERTA ou EMERGÊNCIA, prevenindo transições perigosas */
 
 package Exercicio3;
 
